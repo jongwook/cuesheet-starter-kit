@@ -37,7 +37,7 @@ You can specify `deploy.mode = cluster` in order to submit the application in th
 Going Further
 =============
 
-Developing CueSheet applications as a SBT project rather than in-browser notebooks enables you to use all features that IDE provides, including:
+Developing CueSheet applications as a SBT project rather than in-browser notebooks brings you a number of advantages, most notably the ability to use all features that IDE provides, including:
 
 - Debugging using breakpoints (only in client mode)
 - Code navigation and refactoring
