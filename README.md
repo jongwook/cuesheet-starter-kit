@@ -16,7 +16,7 @@ Deploying to a YARN cluster
 
 CueSheet provides two ways to import YARN configuration. The easier option, if you are using Cloudera Manager, is pasting the "Download Client Configuration" link at your YARN or Hive status page:
 
-<div style="text-align:center;"><center><img src="http://i.imgur.com/iFxvJda.png" width="500"></center></div>
+<img src="http://i.imgur.com/iFxvJda.png" width="500">
 
 Note that you need to Hive configuration link if you are going to use Spark SQL on your Hive database. You can then replace `master = local` in `application.conf` with the download link prepended with "yarn:", like:
 
