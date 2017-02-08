@@ -20,11 +20,15 @@ CueSheet provides two ways to import YARN configuration. The easier option, if y
 
 Note that you need to Hive configuration link if you are going to use Spark SQL on your Hive database. You can then replace `master = local` in `application.conf` with the download link prepended with "yarn:", like:
 
-    master = "yarn:http://quickstart.cloudera:7180/cmf/services/11/client-config"
+```js
+master = "yarn:http://quickstart.cloudera:7180/cmf/services/11/client-config"
+```
 
 Another option is to save the configuration XML files under the resource directory. This does not require the Cloudera Manager website to be running, thus being more suitable for production use. If you downloaded the configuration files at `src/main/resources/cloudera/quickstart`, the `master` option in `application.conf` can be:
 
-    master = "yarn:classpath:cloudera.quickstart"
+```js
+master = "yarn:classpath:cloudera.quickstart"
+```
 
 You can specify `deploy.mode = cluster` in order to submit the application in the cluster mode --- the driver process will also run in the YARN cluster.
 
