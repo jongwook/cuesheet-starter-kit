@@ -11,20 +11,14 @@ object StreamingPi extends CueSheet {{
     (1 to M).map { _ => (Random.nextDouble, Random.nextDouble) }
   }
 
-  val inside = sc.longAccumulator("number of samples inside circle")
-  val total = sc.longAccumulator("total number of samples")
+  var inside = 0L
+  var total = 0L
 
   samples.foreachRDD { rdd =>
+    total += M
+    inside += rdd.filter { case (x, y) => x*x + y*y < 1 }.count()
 
-    rdd
-      // accumulate the total number of samples
-      .mapPartitions { p => total.add(p.size); p }
-      // filter points inside the unit circle
-      .filter { case (x, y) => x*x + y*y < 1 }
-      // accumulate the number of them
-      .foreachPartition { p => inside.add(p.size) }
-
-    println(s"Estimate of Pi with ${total.sum / M} million samples = ${4.0f * inside.sum / total.sum}")
+    println(s"Estimate of Pi with ${total / M} million samples = ${4.0f * inside / total}")
   }
 
 }}
