@@ -3,7 +3,7 @@ import org.apache.spark.rdd.RDD
 
 import scala.util.Random
 
-object CueSheetStarter extends CueSheet {{
+object MonteCarloPi extends CueSheet {{
   val samples: RDD[(Double, Double)] = sc.parallelize(1 to (1 << 24)).map {
     _ => (Random.nextDouble(), Random.nextDouble())
   }

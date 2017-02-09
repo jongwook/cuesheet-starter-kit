@@ -5,7 +5,7 @@ This project provides the skeleton code to get up and running with [CueSheet](ht
 
 | File | What it contains |
 |------|------------------|
-|[`src/main/scala/CueSheetStarter.scala`](src/main/scala/CueSheetStarter.scala) | Example Spark application |
+| [`src/main/scala/MonteCarloPi.scala`](src/main/scala/MonteCarloPi.scala) | Example Spark application |
 | [`src/main/resources/application.conf`](src/main/resources/application.conf) | Spark and deployment nvironment configurations |
 | [`src/main/resources/log4j.properties`](src/main/resources/log4j.properties) | Logging configurations |
 
