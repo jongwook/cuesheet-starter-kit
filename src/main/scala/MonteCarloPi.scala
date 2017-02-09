@@ -1,3 +1,5 @@
+import java.lang.System.err
+
 import com.kakao.cuesheet.CueSheet
 import org.apache.spark.rdd.RDD
 
@@ -9,8 +11,8 @@ object MonteCarloPi extends CueSheet {{
   }
 
   val numSamples = samples.count()
-  println(s"Using $numSamples samples to find the approximate value of pi")
+  err.println(s"Using $numSamples samples to find the approximate value of pi")
 
   val insideCircle = samples.filter { case (x, y) => x * x + y * y <= 1 }.count()
-  println(s"Pi is roughly ${4.0f * insideCircle / numSamples}")
+  err.println(s"Pi is roughly ${4.0f * insideCircle / numSamples}")
 }}

@@ -1,3 +1,5 @@
+import java.lang.System.err
+
 import com.kakao.cuesheet.CueSheet
 import org.apache.spark.streaming.dstream.DStream
 
@@ -15,6 +17,6 @@ object StreamingPi extends CueSheet {{
   samples.foreachRDD { rdd =>
     total += M
     inside += rdd.filter { case (x, y) => x*x + y*y < 1 }.count()
-    println(s"Estimate of Pi with ${total / M}M samples = ${4.0f * inside / total}")
+    err.println(s"Estimate of Pi with ${total / M}M samples = ${4.0f * inside / total}")
   }
 }}
